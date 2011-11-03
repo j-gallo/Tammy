@@ -2,6 +2,18 @@ source 'http://rubygems.org'
 
 gem 'grackle'
 gem 'rails', '3.0.1'
+gem 'will_paginate'
+
+group :development do
+  gem 'rspec-rails'
+  gem 'annotate'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'webrat'
+  gem 'spork'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

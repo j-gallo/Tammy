@@ -14,6 +14,7 @@ class PagesController < ApplicationController
 
   def blog
     @title = "Disjointed Thoughts on Life"
+    @blog = Blog.new
   end
 
   def dad

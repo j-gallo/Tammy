@@ -1,11 +1,16 @@
 Tammy::Application.routes.draw do
 
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :blogs
+
   root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
   match '/portfolio', :to => 'pages#portfolio'
   match '/blog', :to => 'pages#blog'
   match 'dad', :to => 'pages#dad'
-  match '/tweet', :to => 'tweets#show'
+  match '/admin', :to => 'admin#admin'
+  match '/admin/blog', :to => 'admin#blog'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,132 @@
+body{
+background: #e6e6e6 url("../images/background.jpg") top left repeat-x;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+font-size: 24px;
+}
+
+li{
+margin: 0px;
+padding: 0px;
+list-style: none;
+}
+ul{
+margin: 0px;
+padding: 0px;
+}
+#container{
+margin: 0px auto;
+width: 960px;
+}
+
+/*
+==================================
+ Header 
+==================================
+*/
+
+header h1{
+margin-top: 75px;
+color: 002f32;
+}
+
+
+/*
+==================================
+ Header 
+==================================
+*/
+
+
+nav ul{
+margin-top: 25px;
+}
+nav li{
+padding: 0px 20px 0px 0px;
+display: inline;
+}
+
+nav a{
+font-weight: 200;
+font-size: 20px;
+text-decoration: none;
+color: #e6e6e6;
+}
+nav a:link, a:visited, a:active{
+text-decoration: none;
+color: #e6e6e6;
+}
+nav a:hover{
+color: #c84663;
+}
+
+/*
+==================================
+Content 
+==================================
+*/
+
+#content{
+float: left;
+width: 666px;
+}
+
+
+/*
+==================================
+ Blog Post 
+==================================
+*/
+
+.blogPost{
+padding: 15px;
+background-color: #f2f2f2;
+width: 636px;
+
+-moz-border-radius: 6px;
+border-radius: 6px;
+
+-moz-box-shadow: -1px -1px 1px #dadada;
+-webkit-box-shadow: -1px -1px 1px #dadada;
+box-shadow: -1px -1px 1px #dadada;
+}
+
+
+
+/*
+==================================
+ Right Sidebar
+==================================
+*/
+
+#rightBar{
+background-color: #f2f2f2;
+margin-left: 25px;
+padding: 6px;
+float: left;
+width: 250px;
+
+-moz-border-radius: 6px;
+border-radius: 6px;
+
+-moz-box-shadow: -1px -1px 1px #dadada;
+-webkit-box-shadow: -1px -1px 1px #dadada;
+box-shadow: -1px -1px 1px #dadada;
+}
+
+
+/*
+==================================
+ Twitter 
+==================================
+*/
+#twitterFeed{
+width: 266px;
+}
+.twtr-hd, .twtr-ft{
+display: none;
+}
+
+

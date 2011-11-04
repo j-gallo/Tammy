@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title><%= title %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="container">		
   <%= render 'layouts/header' %>
 
   <%flash.each do |key, value| %>
@@ -14,6 +16,6 @@
   <% end %>
 
 <%= yield %>
-
+</div>
 </body>
 </html>

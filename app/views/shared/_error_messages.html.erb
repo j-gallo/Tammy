@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+  <h2><%= pluralize(object.errors.count, "error") %>
+    Prevented this <%= object.class.to_s.underscore.humanize.downcase %>
+    from being created.</h2>
+  <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li> <%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -5,8 +5,8 @@ Tammy::Application.routes.draw do
 
   root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
-  match '/portfolio', :to => 'pages#portfolio'
-  match '/blog', :to => 'pages#blog'
+  match '/work', :to => 'pages#work'
+  match '/life', :to => 'pages#life'
   match 'dad', :to => 'pages#dad'
   match '/admin', :to => 'admin#admin'
   match '/admin/blog', :to => 'admin#blog'

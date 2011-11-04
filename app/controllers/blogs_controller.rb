@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
     @blog = Blog.create(params[:blog])
     if @blog.save
       flash[:success] = "Blog Created!"
-      redirect_to blog_path
+      redirect_to life_path
     else
       render 'admin/blog'
     end

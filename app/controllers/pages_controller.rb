@@ -8,11 +8,11 @@ class PagesController < ApplicationController
     @title = "Contact"
   end
 
-  def portfolio
+  def work
     @title = "Disjointed Body of Work"
   end
 
-  def blog
+  def life
     @title = "Disjointed Thoughts ion Life"
     @blog = Blog.paginate(:page => params[:page], :per_page => 10)
   end

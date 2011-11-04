@@ -121,6 +121,7 @@ box-shadow: -1px -1px 1px #dadada;
 }
 
 #rightBar h1{
+margin-left: 10px;
 margin-top: 8px;
 color: #c84663;
 }

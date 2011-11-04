@@ -5,6 +5,8 @@ class BlogsController < ApplicationController
     if @blog.save
       flash[:success] = "Blog Created!"
       redirect_to blog_path
+    else
+      render 'admin/blog'
     end
   end
 
@@ -12,9 +14,4 @@ class BlogsController < ApplicationController
     @blog.destroy
     redirect_back_or root_path
   end
-
-#  def index
-#    @title = "Disjointed Thoughts on Life"
-#    @blogs = Blog.paginate(:page => params[:page])
-#  end
 end

@@ -13,8 +13,8 @@ class PagesController < ApplicationController
   end
 
   def blog
-    @title = "Disjointed Thoughts on Life"
-    @blog = Blog.new
+    @title = "Disjointed Thoughts ion Life"
+    @blog = Blog.paginate(:page => params[:page], :per_page => 10)
   end
 
   def dad

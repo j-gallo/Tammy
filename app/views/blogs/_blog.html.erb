@@ -1,3 +1,14 @@
-<%= blog.title %> <br />
-<%= blog.content %><br />
--posted  <%= time_ago_in_words(blog.created_at) %> ago. <br /><br />
+  <tr>
+    <td>
+      <%= blog.title.html_safe %> 
+      <%= blog.content.html_safe %>
+      -posted  <%= time_ago_in_words(blog.created_at) %> ago.
+    </td>
+    <% if signed_in? %>
+      <td>
+        <%= button_to "delete", blog, :method => :delete, 
+                                    :confirm => "Are you sure?",
+                                    :title => "blog.title" %>
+      </td>
+    <% end %>                              
+  </tr>

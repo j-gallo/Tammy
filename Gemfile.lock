@@ -89,6 +89,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.30)
+    use_tinymce (0.0.12)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -101,10 +102,11 @@ PLATFORMS
 DEPENDENCIES
   annotate
   grackle
-  rails (= 3.0.1)
+  rails
   rspec
   rspec-rails
   spork
   sqlite3-ruby
+  use_tinymce
   webrat
   will_paginate

@@ -1,6 +1,9 @@
 <%= form_for @blog do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-  <%= f.text_area :title %>
-  <%= f.text_area :content %>
+  <%= f.label "This is the title of the Blog" %>
+  <%= f.tinymce :title %>
+  <br />
+  <%= f.label "This is the body of the Blog" %>
+  <%= f.tinymce :content %>
   <%= f.submit "Submit" %>
 <% end %>

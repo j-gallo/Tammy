@@ -11,13 +11,7 @@ class AdminController < ApplicationController
 
   def create
     @admin = Admin.new(params[:admin])
-    if @admin.save
-      flash[:success] = "Admin Created!"
-    else
-      @admin.password = ""
-      @admin.password.confirmation = ""
-      render 'admin/admin'
-    end
+    @admin.save
   end
 
   def show

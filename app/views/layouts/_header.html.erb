@@ -1,4 +1,3 @@
-
 <header>
   
   <nav>
@@ -8,6 +7,13 @@
       <li><%= link_to 'Work', work_path %></li>
       <li><%= link_to 'Dad', dad_path %></li>
       <li><%= link_to 'Contact', contact_path %></li>
+      <% if signed_in? %>
+        <li><%= link_to 'Admin', admin_path %></li>
+        <li><%= link_to 'blog', admin_blog_path %></li>
+      <% end %>
+      <% if signed_in? %>
+        <li><%= link_to 'sign out', signout_path, :method => :delete %></li>
+      <% end %>
     </ul>
   </nav>
   <h1> Disjointed Thoughts by: Tammy Portnoy </h1>

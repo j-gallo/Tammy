@@ -10,7 +10,8 @@ Tammy::Application.routes.draw do
   match 'dad', :to => 'pages#dad'
   match '/admin', :to => 'admin#admin'
   match '/admin/blog', :to => 'admin#blog'
-  match '/blogs', :to => 'admin#blog'
+#  match '/blogs', :to => 'admin#blog'
+  match '/signout', :to => 'sessions#destroy'
 
 
   # The priority is based upon order of creation:

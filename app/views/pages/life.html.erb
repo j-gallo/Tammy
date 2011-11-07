@@ -1,6 +1,8 @@
 <h1> Hold on to your buts! </h1>
 
-
-<%= render @blog %>
-
-<%= will_paginate @blog %>
+<% unless Blog.to_s.empty? %>
+  <table>
+    <%= render @blog %>
+  </table>
+  <%= will_paginate @blog %>
+<% end %>

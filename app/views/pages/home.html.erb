@@ -2,8 +2,8 @@
 <div id="content">
 
 	<div class="blogPost">
-	<h1>Title: <%= Blog.first.title %></h1>
-	<h3>Body: <%= Blog.first.content %></h3>
+	<h1>Title: <%= Blog.first.title.html_safe %></h1>
+	<h3>Body: <%= Blog.first.content.html_safe %></h3>
 	</div>
 
 </div>

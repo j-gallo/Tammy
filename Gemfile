@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'grackle'
-gem 'rails', '3.0.1'
+gem 'rails'
 gem 'will_paginate'
+gem 'use_tinymce'
 
 group :development do
   gem 'rspec-rails'

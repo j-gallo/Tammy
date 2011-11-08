@@ -2,6 +2,7 @@ Tammy::Application.routes.draw do
 
   resources :sessions, :only => [:new, :create, :destroy]
   resources :blogs
+  resources :portfolios
 
   root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
@@ -10,7 +11,6 @@ Tammy::Application.routes.draw do
   match 'dad', :to => 'pages#dad'
   match '/admin', :to => 'admin#admin'
   match '/admin/blog', :to => 'admin#blog'
-#  match '/blogs', :to => 'admin#blog'
   match '/signout', :to => 'sessions#destroy'
 
 

@@ -1,2 +1,5 @@
-<h1>Pages#portfolio</h1>
-<p>Find me in app/views/pages/portfolio.html.erb</p>
+<h1> This is where she can upload photos or whatever </h1>
+
+<%= render 'shared/portfolio_form' %>
+
+<%= image_tag Portfolio.first.photo.url %>

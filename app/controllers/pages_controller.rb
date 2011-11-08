@@ -10,6 +10,7 @@ class PagesController < ApplicationController
 
   def work
     @title = "Disjointed Body of Work"
+    @portfolio = Portfolio.new
   end
 
   def life

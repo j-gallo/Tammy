@@ -35,30 +35,30 @@ color: #002f32;
 
 /*
 ==================================
- Header 
+ Nav 
 ==================================
 */
 
 
-nav ul{
+header nav ul{
 margin-top: 25px;
 }
-nav li{
+header nav li{
 padding: 0px 20px 0px 0px;
 display: inline;
 }
 
-nav a{
+header nav a{
 font-weight: 200;
 font-size: 20px;
 text-decoration: none;
 color: #e6e6e6;
 }
-nav a:link, a:visited, a:active{
+header nav a:link, a:visited, a:active{
 text-decoration: none;
 color: #e6e6e6;
 }
-nav a:hover{
+header nav a:hover{
 color: #c84663;
 }
 
@@ -140,3 +140,33 @@ display: none;
 }
 
 
+
+
+/*
+==================================
+ Pagination 
+==================================
+*/
+#paginate .pagination a{
+text-decoration: none;
+color: #002f32;
+}
+#paginate .pagination a:link{
+text-decoration: none;
+color: #002f32;
+}
+#paginate .pagination a:visited{
+text-decoration: none;
+color: #002f32;
+}
+#paginate .pagination a:active{
+text-decoration: none;
+color: #002f32;
+}
+#paginate .pagination a:hover{
+color: #c84663;
+}
+
+#paginate .pagination .current{
+color: #c84663;
+}

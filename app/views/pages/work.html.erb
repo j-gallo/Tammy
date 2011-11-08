@@ -2,4 +2,6 @@
 
 <%= render 'shared/portfolio_form' %>
 
-<%= image_tag Portfolio.first.photo.url %>
+<%= unless Portfolio.to_s.empty? %>
+  <%= image_tag Portfolio.first.photo.url %>
+<% end %>

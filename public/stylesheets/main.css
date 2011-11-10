@@ -6,6 +6,21 @@ font-family: Arial, Helvetica, sans-serif;
 h1{
 font-size: 24px;
 }
+h2{
+font-size: 12px;
+font-weight: 300;
+color: #808080;
+}
+h3{
+font-size: 14px;
+font-weight: 300;
+color: #3f3f3f;
+}
+
+.lineBreak {
+width: 100%;
+border-top: 1px solid #b6b6b6;
+}
 
 li{
 margin: 0px;
@@ -20,6 +35,25 @@ padding: 0px;
 margin: 0px auto;
 width: 960px;
 }
+
+body a:link{
+text-decoration: none;
+color:#42826c;
+}
+body a:visited{
+text-decoration: none;
+color:#42826c;
+}
+body a:hover{
+text-decoration: underline;
+color:#42826c;
+}
+body a:active{
+text-decoration: none;
+color:#42826c;
+}
+
+
 
 /*
 ==================================
@@ -61,14 +95,23 @@ font-size: 20px;
 text-decoration: none;
 color: #e6e6e6;
 }
-header nav a:link, a:visited, a:active{
+header nav a:link{
 text-decoration: none;
 color: #e6e6e6;
 }
+header nav a:visited{
+text-decoration: none;
+color: #e6e6e6;
+}
+
+
 header nav a:hover{
 color: #c84663;
 }
-
+header nav a:active{
+text-decoration: none;
+color: #e6e6e6;
+}
 /*
 ==================================
 Content 

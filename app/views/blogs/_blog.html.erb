@@ -1,4 +1,3 @@
- 
 <div id="content">
     <div class="blogPost">
       <h1><%= blog.title.html_safe %></h1>
@@ -8,9 +7,9 @@
     
     <% if signed_in? %>
       
-        <%= button_to "delete", blog, :method => :delete, 
-                                    :confirm => "Are you sure?",
-                                    :title => "blog.title" %>
+        <%= link_to "delete", blog, :method => :delete, 
+                                      :confirm => "Are you sure?",
+                                      :title => "blog.title" %>
      
      <% end %> 
      </div>                             

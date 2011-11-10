@@ -39,9 +39,4 @@ ActiveRecord::Schema.define(:version => 20111107233634) do
     t.datetime "photo_updated_at"
   end
 
-  create_table "tweets", :force => true do |t|
-    t.string   "content"
-    t.datetime "created"
-  end
-
 end

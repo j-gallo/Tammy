@@ -135,6 +135,7 @@ color: #c84663;
 */
 
 .blogPost{
+margin-bottom: 25px;
 padding: 15px;
 background-color: #f2f2f2;
 width: 636px;
@@ -197,6 +198,10 @@ display: none;
  Pagination 
 ==================================
 */
+#paginate {
+clear: both;
+}
+
 #paginate .pagination a{
 text-decoration: none;
 color: #002f32;

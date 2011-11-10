@@ -1,14 +1,17 @@
-  <tr>
-    <td>
-      <%= blog.title.html_safe %> 
-      <%= blog.content.html_safe %>
-      -posted  <%= time_ago_in_words(blog.created_at) %> ago.
-    </td>
+ 
+<div id="content">
+    <div class="blogPost">
+      <h1><%= blog.title.html_safe %></h1>
+      <h2>-posted  <%= time_ago_in_words(blog.created_at) %> ago.</h2>
+      <div class="lineBreak"></div>
+      <h3><%= blog.content.html_safe %></h3>
+    
     <% if signed_in? %>
-      <td>
+      
         <%= button_to "delete", blog, :method => :delete, 
                                     :confirm => "Are you sure?",
                                     :title => "blog.title" %>
-      </td>
-    <% end %>                              
-  </tr>
+     </div> 
+                                 
+</div>
+<% end %> 

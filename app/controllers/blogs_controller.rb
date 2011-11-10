@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+  uses_tiny_mce(:options => AppConfig.advanced_mce_options, :only => [:new, :edit])
+
   def create
     @blog = Blog.create(params[:blog])
     if @blog.save

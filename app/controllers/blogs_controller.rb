@@ -1,9 +1,9 @@
 class BlogsController < ApplicationController
 
-  uses_tiny_mce(:options => AppConfig.advanced_mce_options, :only => [:new, :edit])
+  uses_tiny_mce(:options => AppConfig.default_mce_options, :only => [:new, :edit])
 
   def create
-    @blog = Blog.create(params[:blog])
+    @blog = Blog.create(params[:blog])  
     if @blog.save
       flash[:success] = "Blog Created!"
       redirect_to life_path

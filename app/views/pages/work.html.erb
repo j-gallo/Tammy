@@ -1,6 +1,6 @@
 <h1> This is where she can upload photos or whatever </h1>
 
-<%= render 'shared/portfolio_form' %>
+<%= render 'forms/portfolio_form' %>
 
 <% unless Portfolio.first.to_s.empty? %>
   <%= image_tag Portfolio.first.photo.url %>

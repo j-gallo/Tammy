@@ -1,12 +1,14 @@
 
 <div id="content">
 
-	<div class="blogPost">
-	<h1><%= Blog.first.title.html_safe %></h1>
-	<h2>Posted <%= time_ago_in_words(Blog.first.created_at) %> ago by: Tammy</h2>
-	<div class="lineBreak"></div>
-	<h3><%= Blog.first.content.html_safe %></h3>
-	</div>
+	<% unless Blog.first == nil || Blog.to_s.empty? %>
+		<div class="blogPost">
+		<h1><%= Blog.first.title.html_safe %></h1>
+		<h2>Posted <%= time_ago_in_words(Blog.first.created_at) %> ago by: Tammy</h2>
+		<div class="lineBreak"></div>
+		<h3><%= Blog.first.content.html_safe %></h3>
+		</div>
+	<% end %>
 
 </div>
 

@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'grackle'
 gem 'rails'
 gem 'will_paginate'
-gem 'use_tinymce'
 gem 'paperclip'
 
 group :development do

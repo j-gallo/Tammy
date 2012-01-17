@@ -1,0 +1,7 @@
+<!-- This page lists the titles of all the blogs with the selected tag -->
+
+<% @tag.each do |t| %>
+	<a href="<%= life_path(Blog.find_by_title(t.title)) %>">
+		<%= t.title %>
+	</a>
+<% end %>

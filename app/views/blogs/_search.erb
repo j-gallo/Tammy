@@ -1,0 +1,32 @@
+<% form_tag life_index_path, :method => 'get' do %>
+	<p>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search", :name => nil %>
+	</p>
+<% end %>
+
+<% if @blog.empty? || params[:search] == "" %>
+
+	No results found
+
+<% else %>
+
+	<% @blog.each do |b| %>
+		<div id="content">	
+			<div class="blogPost">
+			<h1><%= b.title %></h1>
+	   	    	<div class="lineBreak"></div>
+				<% content = b.content.downcase.scan(params[:search].downcase) %>
+				<% c = content.first %>
+				<br />
+				<h3><%= excerpt(b.content, c).html_safe %></h3>
+				<a href="<%= life_path(Blog.find_by_title(b.title)) %>">read more</a>
+			</div>
+		</div>
+	<% end %>
+
+	<div id="paginate">
+		<%= will_paginate @blog %>		
+	</div	>
+
+<% end %>

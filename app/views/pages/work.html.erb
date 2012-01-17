@@ -3,5 +3,6 @@
 <%= render 'forms/portfolio_form' %>
 
 <% unless Portfolio.first.to_s.empty? %>
-  <%= image_tag Portfolio.first.photo.url %>
+	<%= image_tag Portfolio.first.photo.url %>
+	<%= link_to 'DELETE', Portfolio.first, method: :delete %>
 <% end %>

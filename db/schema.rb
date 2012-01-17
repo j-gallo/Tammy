@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111110191414) do
+ActiveRecord::Schema.define(:version => 20120109194311) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -39,25 +39,21 @@ ActiveRecord::Schema.define(:version => 20111110191414) do
     t.datetime "photo_updated_at"
   end
 
-  create_table "tiny_prints", :force => true do |t|
-    t.string   "image_file_name"
-    t.string   "image_file_size"
-    t.string   "image_content_type"
+  create_table "taggings", :force => true do |t|
+    t.integer  "blog_id"
+    t.integer  "tag_id"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tiny_videos", :force => true do |t|
-    t.string   "original_file_name"
-    t.string   "original_file_size"
-    t.string   "original_content_type"
+  add_index "taggings", ["blog_id"], :name => "index_taggings_on_blog_id"
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+
+  create_table "tags", :force => true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "tweets", :force => true do |t|
-    t.string   "content"
-    t.datetime "created"
   end
 
 end

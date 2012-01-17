@@ -1,0 +1,3 @@
+<!-- This creates a link of the tag's title linking to a list of blogs that are tagged with that tag. -->
+
+<%= link_to tag.title, life_tag_path(Blog.find(params[:life_id]),tag) %>

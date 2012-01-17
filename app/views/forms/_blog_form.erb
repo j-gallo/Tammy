@@ -1,0 +1,18 @@
+<!-- This is the from to create blog posts -->
+
+<%= form_tag life_index_path, :method => 'post' do %>
+	<%= render 'shared/error_messages', :object => @blog %>
+  <%= label_tag :title, "This is the title of the Blog" %>
+  <br />
+  <%= text_field_tag :title %>
+  <br />
+  <%= label_tag :content, "This is the body of the Blog" %>
+  <br />
+  <%= text_area_tag :content %>
+  <br />
+  <%= submit_tag "Submit" %>
+<% end %>
+
+  <script type = "text/javascript">
+	  CKEDITOR.replace( 'content' );
+  </script>

@@ -1,5 +1,5 @@
-
 <div id="content">
+	
 
 	<% unless Blog.first == nil || Blog.to_s.empty? %>
 		<div class="blogPost">
@@ -44,4 +44,6 @@
   }).render().setUser('tammyportnoy').start();
 </script>
 </div>
+	<h1><a href="http://mydadwearsbowtieseveryday.tumblr.com">Benny's Bow Ties</a></h1>
+	<img src="<%= @bow_ties["response"]["posts"][0]["photos"][0]["alt_sizes"][2]["url"] %>" /img>
 </div>

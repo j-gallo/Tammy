@@ -1,0 +1,30 @@
+<!-- This page shows all of the blogs made on the site 10 blogs at a time -->
+<% if params[:search] %>
+
+<%= render 'blogs/search' %>
+
+<% else %>
+
+	<% form_tag life_index_path, :method => 'get' do %>
+		  <p>
+		  <%= text_field_tag :search, nil, :placeholder => "Search..." %>
+		  <%= submit_tag "Search", :name => nil %>
+		  </p>
+	<% end %>
+	
+	<br />
+
+	<%= link_to "tags", life_tags_path(Blog.first.id) %>
+
+	<br />
+	
+	<% unless Blog.to_s.empty? %>
+		<table>
+			<%= render @blog %>
+		</table>
+		<div id="paginate">
+			<%= will_paginate @blog %>		
+		</div	>
+	<% end %>	
+
+<% end %>

@@ -8,12 +8,11 @@ class BlogsController < ApplicationController
       flash[:success] = "Blog Created!"
       redirect_to life_index_path
     else
-      render 'admin/blog'
+      render 'admins/blog'
     end
   end
 
   def index
-	  @title = "Blogs"
 	  if params[:search]
 		  @blog = Blog.paginate(:page => params[:page], :per_page => 10).find(:all, :conditions => ['content LIKE ?', "%#{params[:search]}%"])
 	  else
@@ -24,7 +23,18 @@ class BlogsController < ApplicationController
 
   def edit
 	@title = "Edit blog"
-	@tag = life_taggings_path(Blog.find(params[:id]))
+	@blog = Blog.find(params[:id])
+  end
+
+  def update
+	  @blog = Blog.find(params[:id])
+	  if @blog.update_attributes(params[:blog])
+		  flash[:success] = "Blog Updated."
+		  redirect_to life_index_path
+	  else
+		  @title = "Edit Blog"
+		  render 'forms/_blog_edit'
+	  end
   end
 
   def show
@@ -33,6 +43,12 @@ class BlogsController < ApplicationController
   end
 
   def destroy
+	  b = Blog.find(params[:id])
+	  b.taggings.each do |t|
+		  if (t.tag.taggings.count == 1)
+			  t.tag.destroy
+		  end
+	  end
     Blog.find(params[:id]).destroy
     flash[:sucess] = "Blog deleted."
     redirect_to life_index_path

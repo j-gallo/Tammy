@@ -13,16 +13,10 @@ class PagesController < ApplicationController
     response = http.request(request)
     bow_ties = JSON.parse(response.body).to_json(only: ["response", "blog", "posts", "photos","alt_sizes","url"])
     @bow_ties = JSON.parse(bow_ties)
-    @fuck = JSON.parse(response.body)
-#    render json: @bow_ties.to_json(only: ["response", "blog","body", "posts", "photos","alt_sizes","url"])
-#    respond_to do |format|
-#	    format.html
-#	    format.json{ render :json => @bow_ties }
-#    end
   end
 
-  def contact
-    @title = "Contact"
+  def about
+    @title = "About"
   end
 
   def work
@@ -34,10 +28,6 @@ class PagesController < ApplicationController
     @title = "Disjointed Thoughts ion Life"
     @blog = Blog.paginate(:page => params[:page], :per_page => 10)
     @tag = BlogTag.create(params[:blog_tag])
-  end
-
-  def dad
-    @title = "Disjointed Dad"
   end
 
   def tags

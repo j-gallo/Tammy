@@ -1,5 +1,11 @@
 <div id="content">
 	
+	<% form_tag life_index_path, :method => 'get' do %>
+		  <p>
+		  <%= text_field_tag :search, nil, :placeholder => "Search..." %>
+		  <%= submit_tag "Search", :name => nil %>
+		  </p>
+	<% end %>
 
 	<% unless Blog.first == nil || Blog.to_s.empty? %>
 		<div class="blogPost">
@@ -13,37 +19,8 @@
 </div>
 
 <div id="rightBar">
-<div id="twitterFeed">
-<h1>Tweet Tweet</h1>
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-  new TWTR.Widget({
-      version: 2,
-        type: 'profile',
-        rpp: 3,
-        interval: 30000,
-        width: 250,
-        height: 300,
-        theme: {
-          shell: {
-            background: '#f2f2f2',
-            color: '#ffffff'
-                 },
-          tweets: {
-            background: '#f2f2f2',
-            color: '#002f32',
-            links: '#42826c'
-                  }
-                },
-        features: {
-          scrollbar: false,
-          loop: false,
-          live: false,
-          behavior: 'all'
-                  }
-  }).render().setUser('tammyportnoy').start();
-</script>
-</div>
+	<%= render 'twitter/twitter' %> 
+	
 	<h1><a href="http://mydadwearsbowtieseveryday.tumblr.com">Benny's Bow Ties</a></h1>
 	<img src="<%= @bow_ties["response"]["posts"][0]["photos"][0]["alt_sizes"][2]["url"] %>" /img>
 </div>

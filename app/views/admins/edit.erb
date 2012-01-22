@@ -1,0 +1,15 @@
+<h1> Edit Admin </h1>
+
+<%= form_for(@admin) do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<%= f.label :name %><br/>
+	<%= f.text_field :name %><br/><br/>
+
+	<%= f.label :password %><br/>
+	<%= f.password_field :password %><br/><br/>
+
+	<%= f.label :password_confirmation %><br/>
+	<%= f.password_field :password_confirmation %><br/><br/>
+
+	<%= f.submit "Update" %>
+<% end %>

@@ -1,0 +1,12 @@
+<!-- this is the page for editing the 'about me' info -->
+
+<%= form_for @about do |f| %>
+	<%= render 'shared/error_messages', :object => @about %>
+  <%= f.text_area :content %>
+  <br />
+  <%= submit_tag "Submit" %>
+<% end %>
+
+  <script type = "text/javascript">
+	  CKEDITOR.replace( 'about_content' );
+  </script>

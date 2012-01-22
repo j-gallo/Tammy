@@ -24,7 +24,7 @@ module SessionsHelper
   end
 
   private
-    def admin_from_rememebr_token
+    def admin_from_remember_token
       Admin.authenticate_with_salt(*remember_token)
     end
     

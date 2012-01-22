@@ -1,0 +1,8 @@
+<% if signed_in? %>
+	<%= link_to 'edit', edit_about_path(@about) %>
+<% end %>
+
+<br />
+
+
+<%= @about.content.html_safe %>

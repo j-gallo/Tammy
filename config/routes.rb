@@ -1,19 +1,18 @@
 Tammy::Application.routes.draw do
 
+  get "about/edit"
+
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :portfolios
+  resources :portfolios, :about
+  resources :admin, :controller => "admins", :path_names => { :new => "add" } 
   resources :life, :controller => "blogs", :path_names => { :new => "add" } do
 	  resources :tags, :taggings
   end
 
   root :to => 'pages#home'
-  match '/contact', :to => 'pages#contact'
   match '/work', :to => 'pages#work'
-  match 'dad', :to => 'pages#dad'
-  match '/admin', :to => 'admin#admin'
-  match '/admin/blog', :to => 'admin#blog'
+  match '/admin/blog', :to => 'admins#blog'
   match '/signout', :to => 'sessions#destroy'
-#  match '/tags', :to => 'pages#tags'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

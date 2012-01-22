@@ -1,17 +1,18 @@
-<!-- This is the form that is used to edit blog posts -->
+<!-- This is the from to edit blog posts -->
 
-<%= form_tag life_path, :method => 'put' do %>
-  <%= label_tag :title, "This is the title of the Blog" %>
+<%= form_for @blog, :url => life_path(@blog) do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+  <%= f.label :title, "This is the title of the Blog" %>
   <br />
-  <%= text_field_tag :title, Blog.find(params[:id]).title %>
+  <%= f.text_field :title %>
   <br />
-  <%= label_tag :content, "This is the body of the Blog" %>
+  <%= f.label :content, "This is the body of the Blog" %>
   <br />
-  <%= text_area_tag :content, Blog.find(params[:id]).content %>
+  <%= f.text_area :content %>
   <br />
-  <%= submit_tag "Submit" %>
+  <%= f.submit "Submit" %>
 <% end %>
 
   <script type = "text/javascript">
-	  CKEDITOR.replace( 'content' );
+	  CKEDITOR.replace( 'blog_content' );
   </script>

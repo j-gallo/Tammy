@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
     admin = Admin.authenticate(params[:session][:name],
                                params[:session][:password])
     if admin.nil?
-      flash.now[:error] = "Invalid username or password."
-      render 'admin/admin'
+      flash[:error] = "Invalid username or password."
+      redirect_to admin_index_path
     else
       sign_in admin
-      redirect_back_or admin
-      flash.now[:success] = "YAY!"
+      redirect_back_or admin_index_path
+      flash[:success] = "You are signed in."
     end
   end
 

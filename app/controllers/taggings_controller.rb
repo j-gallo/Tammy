@@ -14,10 +14,9 @@ class TaggingsController < ApplicationController
 		@tagging.title = params[:title]
 	end
     if @tagging.save
-	flash[:success] = "Tag added!!"
-	redirect_to life_taggings_path(Blog.find(params[:life_id]))
+	redirect_to life_index_path(Blog.find(params[:life_id]))
     else
-	redirect_to life_taggings_path(Blog.find(params[:life_id]))
+	redirect_to life_index_path(Blog.find(params[:life_id]))
     end
   end
 

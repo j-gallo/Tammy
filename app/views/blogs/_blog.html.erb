@@ -5,11 +5,15 @@
       <h1><%= blog.title %></h1>
       <h2>-posted  <%= time_ago_in_words(blog.created_at) %> ago.</h2>
 
+      <% if signed_in? %> 
+
       Add a tag
       <% form_tag(life_taggings_path(blog)) do %>
       <%= text_field_tag 'title' %>
       <%= submit_tag 'submit' %>
       <% end %>
+
+      <% end %> 
 
       <br /> 
 
@@ -26,8 +30,8 @@
 	      <br />
 	      <%= link_to "delete", life_path(blog), :method => :delete, 
                                     		     :confirm => "Are you sure?",
-				    		     :title => "Delete #{blog.title}" %>
-     <% end %> 
+						     :title => "Delete #{blog.title}" %>
+	<% end %> 
 
      </div>                             
 </div>

@@ -1,5 +1,6 @@
 <div id="content">
-	
+
+	<!-- this code renders the search bar -->	
 	<% form_tag life_index_path, :method => 'get' do %>
 		  <p>
 		  <%= text_field_tag :search, nil, :placeholder => "Search..." %>
@@ -7,10 +8,11 @@
 		  </p>
 	<% end %>
 
+	<!-- this code renders the latest blog post created -->
 	<% unless Blog.first == nil || Blog.to_s.empty? %>
 		<div class="blogPost">
 		<h1><%= Blog.first.title.html_safe %></h1>
-		<h2>Posted <%= time_ago_in_words(Blog.first.created_at) %> ago by: Tammy</h2>
+		<h2>Posted <%= time_ago_in_words(Blog.first.created_at) %> ago</h2>
 		<div class="lineBreak"></div>
 		<h3><%= Blog.first.content.html_safe %></h3>
 		</div>
@@ -18,6 +20,7 @@
 
 </div>
 
+<!-- this renders the twitter feed and the link to tammy's tumblr -->
 <div id="rightBar">
 	<%= render 'twitter/twitter' %> 
 	

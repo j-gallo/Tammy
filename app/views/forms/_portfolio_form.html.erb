@@ -1,6 +1,7 @@
 <!-- this is the unfinished portfolio page -->
 
-<% form_for @portfolio, :html => { :multipart => true } do |f| %>
-  <%= f.file_field :photo %>
-  <%= f.submit "Submit" %>
-  <% end %>
+<% form_for @new_portfolio, :html => { :multipart => true } do |f| %>
+	<%= f.file_field :photo %><br/>
+	<%= f.text_field :url%>      
+	<%= f.submit "Submit" %>
+<% end %>

@@ -1,3 +1,6 @@
+<!-- this code generates the error messages to be displayed when
+a form is filled out improperly -->
+
 <% if object && object.errors.any? %>
   <h2><%= pluralize(object.errors.count, "error") %>
     Prevented this <%= object.class.to_s.underscore.humanize.downcase %>

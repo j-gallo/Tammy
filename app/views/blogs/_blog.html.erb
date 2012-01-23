@@ -12,11 +12,13 @@
       <% end %>
 
       <br /> 
-      <% t = blog.taggings.all %>
-      <% t.each do |tag| %> 
-	      <a href="<%= life_tags_path(blog) %>"><%= tag.title %></a>
+
+      <% blog.taggings.each do |tagging| %> 
+	      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>
       <% end %>
+
       <div class="lineBreak"></div>
+
       <h3><%= blog.content.html_safe %></h3>
     
       <% if signed_in? %> 
@@ -26,5 +28,6 @@
                                     		     :confirm => "Are you sure?",
 				    		     :title => "Delete #{blog.title}" %>
      <% end %> 
+
      </div>                             
 </div>

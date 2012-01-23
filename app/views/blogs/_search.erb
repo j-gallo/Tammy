@@ -1,3 +1,4 @@
+<!-- this renders a search bar -->
 <% form_tag life_index_path, :method => 'get' do %>
 	<p>
 	<%= text_field_tag :search, params[:search] %>
@@ -6,11 +7,11 @@
 <% end %>
 
 <% if @blog.empty? || params[:search] == "" %>
-
 	No results found
-
 <% else %>
 
+	<!-- this renders an exerpt of each blog that has a content match of
+	the pattern in the search request. -->
 	<% @blog.each do |b| %>
 		<div id="content">	
 			<div class="blogPost">

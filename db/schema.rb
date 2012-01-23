@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119231220) do
+ActiveRecord::Schema.define(:version => 20120123031303) do
 
   create_table "abouts", :force => true do |t|
     t.text     "content"
@@ -36,13 +36,13 @@ ActiveRecord::Schema.define(:version => 20120119231220) do
   end
 
   create_table "portfolios", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "url"
   end
 
   create_table "taggings", :force => true do |t|

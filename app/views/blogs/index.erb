@@ -6,6 +6,7 @@
 
 <% else %>
 
+	<!-- this creates a search bar -->
 	<% form_tag life_index_path, :method => 'get' do %>
 		  <p>
 		  <%= text_field_tag :search, nil, :placeholder => "Search..." %>
@@ -15,10 +16,14 @@
 	
 	<br />
 
-	<%= link_to "tags", life_tags_path(Blog.first.id) %>
+	<% if Blog.first != nil %>
+		<%= link_to "tags", life_tags_path(Blog.first.id) %>
+	<% end %>
 
 	<br />
-	
+
+	<!-- the conditional exists so that the site will render immediately 
+	upon deployment -->	
 	<% unless Blog.to_s.empty? %>
 		<table>
 			<%= render @blog %>

@@ -6,7 +6,7 @@ class PortfoliosController < ApplicationController
       flash[:success] = "Updated!"
       redirect_to work_path
     else
-      render '/work'
+      render '/pages/work'
     end
   end
 

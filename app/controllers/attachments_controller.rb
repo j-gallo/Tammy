@@ -1,3 +1,6 @@
+###########################################################
+#This controller was generate by the Paperclip gem.
+###########################################################
 class AttachmentsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
 

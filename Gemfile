@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'grackle'
 gem 'rails'
 gem 'will_paginate'
-gem 'paperclip'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development do
   gem 'rspec-rails'

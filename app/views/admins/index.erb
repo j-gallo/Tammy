@@ -1,10 +1,14 @@
-<!-- This handles the admin page at url = /admin -->
+<!-- This handles the admin page at url = /admin. If the admin is signed in,
+a welcome message is displayed, as well as the link to edit the log in info.
+If the admin is not logged in, a form to log in is rendered.-->
 
 <h1>This will be the admin page!</h1>
 
 <% if signed_in? %>
-
-	<%= render 'admins/signed_in' %>
+	
+	Welcome <%= current_admin.name.titleize %>
+	<br />
+	<%= link_to 'Edit', edit_admin_path(current_admin) %>
 
 <% else %>
 

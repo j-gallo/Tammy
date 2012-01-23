@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
 
   def index
 	  if params[:search]
-		  @blog = Blog.paginate(:page => params[:page], :per_page => 10).find(:all, :conditions => ['content LIKE ?', "%#{params[:search]}%"])
+		 @blog = Blog.search(params[:search],params[:page])
 	  else
 	 	 @blog = Blog.paginate(:page => params[:page], :per_page => 10)
 	  end
@@ -42,6 +42,8 @@ class BlogsController < ApplicationController
 	  @blog = Blog.find(params[:id])
   end
 
+#### Destroys the current blog. If the blog is the only one with a given tag,
+   # that tag is deleted. (This prevents tags with no corresponding blog.)
   def destroy
 	  b = Blog.find(params[:id])
 	  b.taggings.each do |t|

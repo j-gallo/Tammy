@@ -1,8 +1,13 @@
-<% if signed_in? %>
-	<%= link_to 'edit', edit_about_path(@about) %>
-<% end %>
+<!-- The code is wrapped in a check so when the site is first deployed
+the page will render, even if an About hasn't been saved. If an about
+has been saved, it will be rendered via this code. -->
+<% if @about != nil %>
+	<% if signed_in? %>
+		<%= link_to 'edit', edit_about_path(@about) %>
+	<% end %>
 
 <br />
 
 
 <%= @about.content.html_safe %>
+<% end %>

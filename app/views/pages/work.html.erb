@@ -1,8 +1,8 @@
-<h1> This is where she can upload photos or whatever </h1>
+<!-- this code renders the index of articles tammy has posted for
+her portfolio -->
 
-<%= render 'forms/portfolio_form' %>
-
-<% unless Portfolio.first.to_s.empty? %>
-	<%= image_tag Portfolio.first.photo.url %>
-	<%= link_to 'DELETE', Portfolio.first, method: :delete %>
+<% if signed_in? %>
+	<%= render 'forms/portfolio_form' %>
 <% end %>
+
+<%= render @portfolio %>

@@ -5,6 +5,8 @@ class TaggingsController < ApplicationController
 	  @tagging = life_taggings_path(Blog.find(params[:life_id]))
   end
 
+## Creates a new tag if the desired tag does not exsist. Otherwise, a new 
+## relationship is created between the blog and the desired tag.
   def create
 	@tagging = Tagging.new
 	@tagging.blog_id = params[:life_id]

@@ -4,7 +4,6 @@ gem 'grackle'
 gem 'rails'
 gem 'will_paginate'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
-gem "rmagick", "2.12.0", :require => 'RMagick'
 
 group :development do
   gem 'rspec-rails'

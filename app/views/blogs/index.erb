@@ -6,21 +6,9 @@
 
 <% else %>
 
-	<!-- this creates a search bar -->
-	<% form_tag life_index_path, :method => 'get' do %>
-		  <p>
-		  <%= text_field_tag :search, nil, :placeholder => "Search..." %>
-		  <%= submit_tag "Search", :name => nil %>
-		  </p>
-	<% end %>
-	
-	<br />
-
 	<% if Blog.first != nil %>
-		<%= link_to "tags", life_tags_path(Blog.first.id) %>
+		<div id="viewTags"><h3>View: <%= link_to "All Tags", life_tags_path(Blog.first.id) %></h3></div>
 	<% end %>
-
-	<br />
 
 	<!-- the conditional exists so that the site will render immediately 
 	upon deployment -->	
@@ -30,7 +18,12 @@
 		</table>
 		<div id="paginate">
 			<%= will_paginate @blog %>		
+
+
 		</div	>
+
+		</div	>
+
 	<% end %>	
 
 <% end %>

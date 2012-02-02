@@ -6,11 +6,13 @@ font-family: Arial, Helvetica, sans-serif;
 h1{
 font-size: 24px;
 }
+
 h2{
 font-size: 12px;
 font-weight: 300;
 color: #808080;
 }
+
 h3{
 font-size: 14px;
 font-weight: 300;
@@ -64,7 +66,13 @@ text-decoration: none;
 color:#42826c;
 }
 
+h1 a:link{
+conor: #C84663
+}
 
+.clearBoth{
+clear: both;
+}
 
 /*
 ==================================
@@ -72,12 +80,12 @@ color:#42826c;
 ==================================
 */
 
-header h1{
+#textHeader h1{
 display: none;
 }
-header #textHeader{
-margin-top: 75px;
-margin-bottom: 15px;
+#textHeader{
+margin-top: 15px;
+margin-bottom: 25px;
 color: #002f32;
 width: 660px;
 height: 48px;
@@ -92,8 +100,20 @@ background: url("../images/disjointedText.png") top left no-repeat;
 */
 
 
+#searchBar{
+margin: 20px 0px 0px 35px;
+width: 250px;
+float: left;
+}
+
+header nav{
+width: 666px;
+float: left;
+}
+
+
 header nav ul{
-margin-top: 25px;
+margin-top: 20px;
 }
 header nav li{
 padding: 0px 20px 0px 0px;
@@ -144,11 +164,19 @@ color: #c84663;
  Blog Post 
 ==================================
 */
+.blogPost img{
+padding: 10px 10px 10px 10px;
+margin: 0px 0px 0px 0px;
+background-color: #fff;
+-moz-box-shadow:    0px 0px 3px 3px #ccc;
+-webkit-box-shadow: 0px 0px 3px 3px #ccc;
+box-shadow:         0px 0px 3px 3px #ccc;
+}
 
 .blogPost{
 margin-bottom: 25px;
 padding: 15px;
-background-color: #f2f2f2;
+background-color: #fdfdfd;
 width: 636px;
 
 -moz-border-radius: 6px;
@@ -167,9 +195,57 @@ box-shadow: -1px -1px 1px #dadada;
 ==================================
 */
 
-#rightBar{
+#bennyBowTieImage{
+float: left;
+background: url("../images/bennyBowTie.png") top left no-repeat;
+width: 262px;
+height: 97px;
+margin: 0 0 0 25px;
+padding: 0 0 0 0;
+}
+
+
+#bennyBowTieImage img{
+margin:0px;
+padding:0px;
+}
+
+#bennyBowTieImage a{
+margin: 0;
+padding: 0;
+}
+
+#expand{
+margin: 0 0 0 25px;
+float: left;
+padding: 0;
+width: 262px;
+background: url("../images/expand.png") top left repeat-y;
+}
+#expand img{
+padding:6px;
+}
+#expand h1{
+font-size: 18px;
+font-weight:400;
+margin-left: 10px;
+margin-top: 8px;
+color: #42826c;
+}
+
+#bottom{
+float: left;
+padding: 0;
+margin: 0 0 25px 25px;
+width: 262px;
+height: 6px;
+background: url("../images/bottom.png") top left no-repeat;
+}
+
+.rightBar{
 background-color: #f2f2f2;
 margin-left: 25px;
+margin-bottom: 25px;
 padding: 6px;
 float: left;
 width: 250px;
@@ -182,10 +258,12 @@ border-radius: 6px;
 box-shadow: -1px -1px 1px #dadada;
 }
 
-#rightBar h1{
+.rightBar h1{
+font-size: 18px;
+font-weight:400;
 margin-left: 10px;
 margin-top: 8px;
-color: #c84663;
+color: #42826c;
 }
 
 
@@ -194,6 +272,10 @@ color: #c84663;
  Twitter 
 ==================================
 */
+.twtr-tweet-text p{
+font-size: 11px;
+}
+
 #twitterFeed{
 width: 266px;
 }

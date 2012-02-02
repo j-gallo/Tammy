@@ -5,6 +5,8 @@
       <h1><%= blog.title %></h1>
       <h2>-posted  <%= time_ago_in_words(blog.created_at) %> ago.</h2>
 
+      <br /> 
+
       <% if signed_in? %> 
 
       Add a tag
@@ -14,12 +16,6 @@
       <% end %>
 
       <% end %> 
-
-      <br /> 
-
-      <% blog.taggings.each do |tagging| %> 
-	      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>
-      <% end %>
 
       <div class="lineBreak"></div>
 
@@ -31,7 +27,20 @@
 	      <%= link_to "delete", life_path(blog), :method => :delete, 
                                     		     :confirm => "Are you sure?",
 						     :title => "Delete #{blog.title}" %>
-	<% end %> 
+
+
+	<br />
+     <h3> Add a tag 
+      <% form_tag(life_taggings_path(blog)) do %>
+      <%= text_field_tag 'title' %>
+      <%= submit_tag 'submit' %>
+      </h3><% end %>
+
+      <% end %> 
+      <% blog.taggings.each do |tagging| %> 
+	     <div class="blogTags"><h3>Tags: <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %></div>
+      <% end %>
+
 
      </div>                             
 </div>

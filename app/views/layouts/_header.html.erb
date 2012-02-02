@@ -1,6 +1,6 @@
 <!-- This code renders the header for the pages on the site -->
 <header>
-  
+  <div id="headerContain">
   <nav>
     <ul>
       <li><%= link_to 'Home', root_path %></li>
@@ -17,4 +17,17 @@
   </nav>
   <h1> Disjointed Thoughts by: Tammy Portnoy </h1>
   <div id="textHeader"></div>
+      </nav>	
+<!-- this code renders the search bar -->   
+    <div id="searchBar">
+      <% form_tag life_index_path, :method => 'get' do %>
+		  <%= text_field_tag :search, nil, :placeholder => "Search..." %>
+		  <%= submit_tag "Search", :name => nil %>
+	<% end %>
+	</div>
+</div>
+  
 </header>
+	<div class="clearBoth"></div>
+	<br />
+	<br />

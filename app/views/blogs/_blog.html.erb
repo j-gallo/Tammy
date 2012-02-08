@@ -33,10 +33,12 @@
       </h3><% end %>
 	</div> <!-- end edit post !-->
       <% end %> 
+      
+      <div class="blogTags"><h3>Tags:
       <% blog.taggings.each do |tagging| %> 
-	     <div class="blogTags"><h3>Tags: <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %></div>
+	      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>
       <% end %>
-
+		</div>
 
      </div>                             
 </div>

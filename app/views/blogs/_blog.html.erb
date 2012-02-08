@@ -5,28 +5,24 @@
       <h1><%= blog.title %></h1>
       <h2>-posted  <%= time_ago_in_words(blog.created_at) %> ago.</h2>
 
-      <br /> 
 
-      <% if signed_in? %> 
 
-      Add a tag
-      <% form_tag(life_taggings_path(blog)) do %>
-      <%= text_field_tag 'title' %>
-      <%= submit_tag 'submit' %>
-      <% end %>
-
-      <% end %> 
 
       <div class="lineBreak"></div>
 
       <h3><%= blog.content.html_safe %></h3>
+     
+     
+     <% if signed_in? %> 
+    <div class="editPost">
+    <h2>Admin Options</h2>
     
-      <% if signed_in? %> 
-	      <%= link_to "edit", edit_life_path(blog) %>
-	      <br />
-	      <%= link_to "delete", life_path(blog), :method => :delete, 
+   
+      	<ul>
+	     <li> <%= link_to "edit post", edit_life_path(blog) %> </li> |
+	     <li> <%= link_to "delete post", life_path(blog), :method => :delete, 
                                     		     :confirm => "Are you sure?",
-						     :title => "Delete #{blog.title}" %>
+						     :title => "Delete #{blog.title}" %></li>
 
 
 	<br />
@@ -35,7 +31,7 @@
       <%= text_field_tag 'title' %>
       <%= submit_tag 'submit' %>
       </h3><% end %>
-
+	</div> <!-- end edit post !-->
       <% end %> 
       <% blog.taggings.each do |tagging| %> 
 	     <div class="blogTags"><h3>Tags: <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %></div>

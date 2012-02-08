@@ -4,6 +4,8 @@ supplied, the code appends the http:// to the beginning if need be to create
 a proper link. If no url was provided, the image is a link to the full-sized 
 image instead. -->
 
+<div class="workAdminContain">
+<div class="workImgContain">
 <% if portfolio.url == "" %>
 	<a href="<%= portfolio.photo.url %>">
 		<%= image_tag portfolio.photo.url(:thumb) %>
@@ -19,8 +21,9 @@ image instead. -->
 	</a>
 	<% end %>
 <% end %>
-
+</div>
 <% if signed_in? %>
 	<%= link_to "delete", portfolio_path(portfolio), :method => :delete, 
 					    		 :confirm => "Are you sure?" %>
 <% end %>
+</div>

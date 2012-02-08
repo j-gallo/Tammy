@@ -1,13 +1,5 @@
 <!-- this renders a search bar -->
 
-<% form_tag life_index_path, :method => 'get' do %>
-	<p>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag "Search", :name => nil %>
-	</p>
-<% end %>
-
-
 <% if @blog.empty? || params[:search] == "" %>
 	No results found
 <% else %>

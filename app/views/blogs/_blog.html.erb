@@ -36,7 +36,7 @@
       
       <div class="blogTags"><h3>Tags:
       <% blog.taggings.each do |tagging| %> 
-	      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>
+	      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>,
       <% end %>
 		</div>
 

@@ -6,8 +6,20 @@
 
 <% else %>
 
-	<% if Blog.first != nil %>
-		<div id="viewTags"><h3>View: <%= link_to "All Tags", life_tags_path(Blog.first.id) %></h3></div>
+	<!-- counts all of the tagggings, and prints out the top ten most used tags.
+	If less than ten tags exist, all tags are printed -->
+	<% tags = Tagging.count(:group => :tag_id, :having => 'count_all > 0') %>
+	<% t = tags.sort {|a,b| -1*(a[1]<=>b[1])}%>
+	<% if Tag.count < 10 %>
+		<% for i in 0..(Tag.count-1) %>
+			<%= link_to Tag.find_by_id(t[i][0]).title, 
+				life_tag_path(Tag.find_by_id(t[i][0]).blogs.first,Tag.find_by_id(t[i][0])) %>	
+		<% end %>
+	<% else %>
+		<% for i in 0..10 %>
+			<%= link_to Tag.find_by_id(t[i][0]).title, 
+				life_tag_path(Tag.find_by_id(t[i][0]).blogs.first,Tag.find_by_id(t[i][0])) %>	
+		<% end %>
 	<% end %>
 
 	<!-- the conditional exists so that the site will render immediately 
@@ -18,8 +30,6 @@
 		</table>
 		<div id="paginate">
 			<%= will_paginate @blog %>		
-
-
 		</div	>
 
 		</div	>

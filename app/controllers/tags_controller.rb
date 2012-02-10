@@ -1,12 +1,12 @@
 class TagsController < ApplicationController
   def index
-	  @title = "Add a tag"
-	  @tag = Tag.all
-  end
+	  @title = "Delete Tags"
+	  @tag  = Blog.find(params[:life_id]).tags
+  end 
 
   def show
 	  @title = Tag.find(params[:id]).title
-	  @tag = Tag.find(params[:id]).blogs
+	  @tagged = Tag.find(params[:id]).blogs.paginate(:page => params[:page], :per_page => 10)
   end
 
   def new

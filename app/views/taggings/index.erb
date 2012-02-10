@@ -1,6 +1,5 @@
 <!-- This page is the view for tag creation -->
 
-<% form_tag(life_taggings_path(Blog.find(params[:life_id]))) do %>
-<%= text_field_tag 'title' %>
-<%= submit_tag 'submit' %>
-<% end %>
+Click on a tag to delete it. <br/> <br/>
+
+<%= render @tagging %>

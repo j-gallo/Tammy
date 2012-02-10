@@ -1,9 +1,9 @@
 class TaggingsController < ApplicationController
 
   def index
-	  @title = "Add a tag"
-	  @tagging = life_taggings_path(Blog.find(params[:life_id]))
-  end
+	  @title = "Delete Tags"
+	  @tagging  = Blog.find(params[:life_id]).taggings
+  end 
 
 ## Creates a new tag if the desired tag does not exsist. Otherwise, a new 
 ## relationship is created between the blog and the desired tag.
@@ -27,6 +27,14 @@ class TaggingsController < ApplicationController
   end
 
   def destroy
+	t = Tagging.find(params[:id])
+		  if (t.tag.taggings.count == 1)
+			  t.tag.destroy
+		  end
+	t.destroy
+	flash[:sucess] = "Tag deleted."
+	redirect_to life_taggings_path
   end
+
 end
 

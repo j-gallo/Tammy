@@ -1,7 +1,43 @@
-<!-- This page lists the titles of all the blogs with the selected tag -->
+<!-- This page shows all of the blogs with the selected tag -->
 
-<% @tag.each do |t| %>
-	<a href="<%= life_path(Blog.find_by_title(t.title)) %>">
-		<%= t.title %>
-	</a>
+<% @tagged.each do |t| %>
+	<div id="content">
+		<div class="blogPost">
+			<h1><%= t.title %></h1>
+      			<h2>-posted  <%= time_ago_in_words(t.created_at) %> 
+				ago.</h2>
+        		<div class="lineBreak"></div>
+			<%= t.content.html_safe %>
+	
+			<% if signed_in? %> 
+			<div class="editPost">
+				<h2>Admin Options</h2>
+				<ul>
+				<li> <%= link_to "edit post", edit_life_path(t) %> </li> |
+				<li> <%= link_to "delete post", life_path(t), :method => :delete, 
+						     	:title => "Delete #{t.title}" %></li>	
+							<br />
+							<h3> Add a tag 
+							<% form_tag(life_taggings_path(t)) do %>      
+								<%= text_field_tag 'title' %>      
+								<%= submit_tag 'submit' %>      
+						</h3><% end %>	
+				</div> <!-- end edit post !-->      
+			<% end %>
+		     	
+			<!-- displays the tags and makes sure that they are separated by commas -->
+			<div class="blogTags"><h3>Tags:					
+					<% t.taggings.each do |tagging| %>		
+						<% if tagging == t.taggings.last %>
+							<%= link_to tagging.title, life_tag_path(t,tagging.tag) %>	
+						<% else%>
+							<%= link_to tagging.title, life_tag_path(t,tagging.tag) %>,
+						<% end %>
+					<% end %>		
+			</div>     
+		</div>
+	</div>		
 <% end %>
+<div id="paginate">
+	<%= will_paginate @tagged %>		
+</div	>

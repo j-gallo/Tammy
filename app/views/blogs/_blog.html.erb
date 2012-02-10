@@ -4,39 +4,38 @@
     <div class="blogPost">
       <h1><%= blog.title %></h1>
       <h2>-posted  <%= time_ago_in_words(blog.created_at) %> ago.</h2>
-
-
-
-
       <div class="lineBreak"></div>
-
       <h3><%= blog.content.html_safe %></h3>
      
-     
-     <% if signed_in? %> 
-    <div class="editPost">
-    <h2>Admin Options</h2>
-    
-   
-      	<ul>
-	     <li> <%= link_to "edit post", edit_life_path(blog) %> </li> |
-	     <li> <%= link_to "delete post", life_path(blog), :method => :delete, 
-                                    		     :confirm => "Are you sure?",
-						     :title => "Delete #{blog.title}" %></li>
+ 
+      <!-- ADMIN OPTIONS -->
+      <% if signed_in? %>     
+	      <div class="editPost">    
+		      <h2>Admin Options</h2>      	
+		      <ul>	     
+			      <li> <%= link_to "edit post", edit_life_path(blog) %> </li> |	     
+			      <li> <%= link_to "delete post", life_path(blog), :method => :delete, 
+			      				:title => "Delete #{blog.title}" %></li> |
+			      <li> <%= link_to "delete tags", life_taggings_path(blog) %></li>
+			      <br />     
+			      <h3> Add a tag      
+				      <% form_tag(life_taggings_path(blog)) do %>     
+					      <%= text_field_tag 'title' %>     
+					      <%= submit_tag 'submit' %>     
+			     </h3><% end %>	
+		      </ul>
+	      </div> <!-- end edit post !-->
+      <% end %>
+      <!-- END ADMIN OPTIONS -->
 
-
-	<br />
-     <h3> Add a tag 
-      <% form_tag(life_taggings_path(blog)) do %>
-      <%= text_field_tag 'title' %>
-      <%= submit_tag 'submit' %>
-      </h3><% end %>
-	</div> <!-- end edit post !-->
-      <% end %> 
-      
+      <!-- displays the tags and makes sure they are separated by commas -->
       <div class="blogTags"><h3>Tags:
       <% blog.taggings.each do |tagging| %> 
-	      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>,
+	      <% if tagging == blog.taggings.last %>
+		      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>	
+	      <% else%>							
+		      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>,
+	      <% end %>
       <% end %>
 		</div>
 

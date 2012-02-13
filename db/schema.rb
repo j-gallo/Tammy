@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120123031303) do
+ActiveRecord::Schema.define(:version => 20120210150534) do
 
   create_table "abouts", :force => true do |t|
     t.text     "content"
@@ -40,98 +40,20 @@ ActiveRecord::Schema.define(:version => 20120123031303) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "url"
+    t.integer  "year"
   end
 
   create_table "taggings", :force => true do |t|
     t.integer  "blog_id"
     t.integer  "tag_id"
     t.string   "title"
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "url"
-  end
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  add_index "taggings", ["blog_id"], :name => "index_taggings_on_blog_id"
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-
-  create_table "tags", :force => true do |t|
-=======
-  create_table "taggings", :force => true do |t|
-    t.integer  "blog_id"
-    t.integer  "tag_id"
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
-  create_table "taggings", :force => true do |t|
-    t.integer  "blog_id"
-    t.integer  "tag_id"
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
-  create_table "taggings", :force => true do |t|
-    t.integer  "blog_id"
-    t.integer  "tag_id"
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
-  create_table "taggings", :force => true do |t|
-    t.integer  "blog_id"
-    t.integer  "tag_id"
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
-  create_table "taggings", :force => true do |t|
-    t.integer  "blog_id"
-    t.integer  "tag_id"
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
-  create_table "taggings", :force => true do |t|
-    t.integer  "blog_id"
-    t.integer  "tag_id"
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
-=======
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
   add_index "taggings", ["blog_id"], :name => "index_taggings_on_blog_id"
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
 
@@ -141,5 +63,4 @@ ActiveRecord::Schema.define(:version => 20120123031303) do
     t.datetime "updated_at"
   end
 
->>>>>>> 3b2c957e93be7f9fb295527e6b1ef8ec32a9d951
 end

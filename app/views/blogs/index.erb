@@ -8,8 +8,7 @@
 
 	<!-- counts all of the tagggings, and prints out the top ten most used tags.
 	If less than ten tags exist, all tags are printed -->
-	<% tags = Tagging.count(:group => :tag_id, :having => 'count_all > 0') %>
-	<% t = tags.sort {|a,b| -1*(a[1]<=>b[1])}%>
+	<% t = Tagging.count(:group => :tag_id).sort{|a,b| -1*(a[1]<=>b[1])} %>
 	<% if Tag.count < 10 %>
 		<% for i in 0..(Tag.count-1) %>
 			<%= link_to Tag.find_by_id(t[i][0]).title, 

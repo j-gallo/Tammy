@@ -1,17 +1,24 @@
 class PortfoliosController < ApplicationController
 
+  def index
+    @title = "Disjointed Body of Work"
+    @new_portfolio = Portfolio.new
+    @portfolio = Portfolio.all
+  end
+
   def create
-    @portfolio = Portfolio.create(params[:portfolio])
-    if @portfolio.save
+    @portfolio = Portfolio.all
+    @new_portfolio = Portfolio.create(params[:portfolio])
+    if @new_portfolio.save
       flash[:success] = "Updated!"
-      redirect_to work_path
+      redirect_to portfolios_path
     else
-      render '/pages/work'
+      render 'portfolios/index'
     end
   end
 
   def destroy
     Portfolio.find(params[:id]).destroy
-    redirect_back_or work_path
+    redirect_to portfolios_path
   end
 end

@@ -15,10 +15,6 @@
 <% end %>
 
 <!-- This calls the script to render the WYSIWYG -->
-<script>
-	CKEDITOR.replace('content', {
-		filebrowserImageUploadUrl : '/browser/upload/type/image',
-		filebrowserWindowWidth  : 800,
-		filebrowserWindowHeight : 500
-	});
+<script type = "text/javascript">
+	CKEDITOR.replace( 'blog_content' );
 </script>

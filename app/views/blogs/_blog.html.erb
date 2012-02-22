@@ -2,7 +2,7 @@
 
 <div id="content">
     <div class="blogPost">
-      <h1><%= blog.title %></h1>
+      <h1><%= link_to blog.title, life_url(blog) %></h1>
       <h2>-posted  <%= time_ago_in_words(blog.created_at) %> ago.</h2>
       <div class="lineBreak"></div>
       <h3><%= blog.content.html_safe %></h3>
@@ -38,6 +38,18 @@
 	      <% end %>
       <% end %>
 		</div>
+
+		<!-- AddThis Button BEGIN -->
+		<div class="addthis_toolbox addthis_default_style "
+			addthis:url="<%= life_url(blog) %>" >
+			<a href="http://www.addthis.com/bookmark.php?v=250&pubid={YOUR_PROFILE_ID}" class="addthis_button_compact">Share</a>
+			<span class="addthis_separator">|</span>
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_3"></a>
+			<a class="addthis_button_preferred_4"></a>
+		</div>
+		<!-- AddThis Button END -->
 
      </div>                             
 </div>

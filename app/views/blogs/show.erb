@@ -23,6 +23,18 @@ tag links or the search bar -->
 					                	:confirm => "Are you sure?",
 					   		        :title => "Delete #{@blog.title}" %>
 		<% end %>
+											
+		<!-- AddThis Button BEGIN -->
+		<div class="addthis_toolbox addthis_default_style "
+			addthis:url="<%= life_url(@blog) %>" >
+			<a href="http://www.addthis.com/bookmark.php?v=250&pubid={YOUR_PROFILE_ID}" class="addthis_button_compact">Share</a>
+			<span class="addthis_separator">|</span>
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_3"></a>
+			<a class="addthis_button_preferred_4"></a>
+		</div>
+		<!-- AddThis Button END -->
 
 	</div>                
 

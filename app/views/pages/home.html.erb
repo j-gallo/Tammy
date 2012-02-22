@@ -1,31 +1,29 @@
 <div id="content">
 
-
-
-
-
-
 <div id="textHeader">
 <h1> Disjointed Thoughts by: Tammy Portnoy </h1>
 </div>
 
+<a href="http://www.linkedin.com/in/tammyportnoy/" style="text-decoration:none;">
+	<span style="font: 80% Arial,sans-serif; color:#0783B6;">
+		<img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png" 
+		width="40" height="30" alt="View Tammy Portnoy's LinkedIn profile" 
+		style="vertical-align:middle" border="0"></span></a>
 
 	<!-- this code renders the search bar -->	
-
-
 
 	<!-- this code renders the latest blog post created -->
 	<% unless Blog.first == nil || Blog.to_s.empty? %>
 		<div class="blogPost">
-			<h1><%= Blog.first.title.html_safe %></h1>
+			<h1><%= link_to Blog.first.title.html_safe, life_url(Blog.first) %></h1>
 			<h2>Posted <%= time_ago_in_words(Blog.first.created_at) %> ago</h2>
 
 			<div class="lineBreak"></div>
 			<h3><%= Blog.first.content.html_safe %></h3>
 
-      			<!-- ADMIN OPTIONS -->
-      			<% if signed_in? %>     
-	      			<div class="editPost">    
+      	<!-- ADMIN OPTIONS -->
+      		<% if signed_in? %>     
+	      		<div class="editPost">    
 		      		<h2>Admin Options</h2>      	
 		      		<ul>	     
 			      		<li> <%= link_to "edit post", edit_life_path(Blog.first) %> </li> |	     
@@ -37,25 +35,40 @@
 				      		<% form_tag(life_taggings_path(Blog.first)) do %>     
 					      		<%= text_field_tag 'title' %>     
 					      		<%= submit_tag 'submit' %>     
-			     		</h3>   <% end %>
-		      		</ul>	      
-	      			</div> <!-- end edit post !-->
+			     		    <% end %>
+								</h3>
+							</ul>	     
+	      		</div> <!-- end edit post !-->
 			<% end %>
 			<!-- END ADMIN OPTIONS -->
 	  
 			<!-- displays the tags and makes sure they are separated by commas -->
 			<div class="blogTags"><h3>Tags:
-      			<% Blog.first.taggings.each do |tagging| %> 
-	      			<% if tagging == Blog.first.taggings.last %>
-		      			<%= link_to tagging.title, life_tag_path(Blog.first,tagging.tag) %>	
-	      				<% else%>							
-		      			<%= link_to tagging.title, life_tag_path(Blog.first,tagging.tag) %>,
-	      			<% end %>
-      			<% end %>
+      	<% Blog.first.taggings.each do |tagging| %> 
+	      	<% if tagging == Blog.first.taggings.last %>
+		      	<%= link_to tagging.title, life_tag_path(Blog.first,tagging.tag) %>	
+					<% else%>							
+		      	<%= link_to tagging.title, life_tag_path(Blog.first,tagging.tag) %>,
+	      	<% end %>
+      	<% end %>
 			</div>
-		</div>
-	<% end %>
 
+					<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style "
+				addthis:url="<%= life_url(Blog.first) %>" >
+				<a href="http://www.addthis.com/bookmark.php?v=250&pubid={YOUR_PROFILE_ID}" class="addthis_button_compact">Share</a>
+				<span class="addthis_separator">|</span>
+				<a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_preferred_2"></a>
+				<a class="addthis_button_preferred_3"></a>
+				<a class="addthis_button_preferred_4"></a>
+			</div>
+			<!-- AddThis Button END -->
+		</div>
+
+	<% end %>
+	<!-- end of the rendering of the latest post -->
+	
 </div>
 
 <div id="rightContain">
@@ -64,11 +77,6 @@
 <div id="expand">
 	<h1><a href="http://mydadwearsbowtieseveryday.tumblr.com">Benny's Bow Ties</a></h1>
 	<img src="<%= @bow_ties["response"]["posts"][0]["photos"][0]["alt_sizes"][2]["url"] %>" /img>	
-
-<!-- this renders the twitter feed and the link to tammy's tumblr -->
-</div>
-<div id="bottom"></div>
-
 
 <!-- this renders the twitter feed and the link to tammy's tumblr -->
 <div class="rightBar">	

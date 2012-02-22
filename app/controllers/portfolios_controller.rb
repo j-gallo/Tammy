@@ -3,7 +3,9 @@ class PortfoliosController < ApplicationController
   def index
     @title = "Disjointed Body of Work"
     @new_portfolio = Portfolio.new
-    @portfolio = Portfolio.all
+    params[:format] ||= Date.today.year
+    year = params[:format].to_i 
+    @portfolio = Portfolio.find_all_by_year(year) 
   end
 
   def create

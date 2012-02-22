@@ -1,5 +1,7 @@
 Tammy::Application.routes.draw do
 
+  get "photo/create"
+
   get "about/edit"
 
   resources :sessions, :only => [:new, :create, :destroy]
@@ -10,9 +12,9 @@ Tammy::Application.routes.draw do
   end
 
   root :to => 'pages#home'
-  match '/work', :to => 'pages#work'
   match '/admin/blog', :to => 'admins#blog'
   match '/signout', :to => 'sessions#destroy'
+	match '/browser/upload/type/image', :to => 'photos#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

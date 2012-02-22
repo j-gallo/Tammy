@@ -16,10 +16,7 @@ her portfolio -->
 
 <!-- This grabs the year from the url, grabs all portfolio objects with that year,
      and calls the file to render them -->
-<% params[:format] ||= Date.today.year %>
-<% year = params[:format].to_i %>
-<% portfolio = Portfolio.find_all_by_year(year) %>
-<%= render portfolio %>
+<%= render @portfolio %>
 
 <div class="clearBoth"></div>
 </div>

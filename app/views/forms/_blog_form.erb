@@ -1,5 +1,6 @@
 <!-- This is the from to create blog posts -->
 
+
 <%= form_tag life_index_path, :method => 'post' do %>
 	<%= render 'shared/error_messages', :object => @blog %>
   <%= label_tag :title, "This is the title of the Blog" %>
@@ -14,6 +15,10 @@
 <% end %>
 
 <!-- This calls the script to render the WYSIWYG -->
-  <script type = "text/javascript">
-	  CKEDITOR.replace( 'content' );
-  </script>
+<script>
+	CKEDITOR.replace('content', {
+		filebrowserImageUploadUrl : '/browser/upload/type/image',
+		filebrowserWindowWidth  : 800,
+		filebrowserWindowHeight : 500
+	});
+</script>

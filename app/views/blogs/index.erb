@@ -1,25 +1,13 @@
 <!-- This page shows all of the blogs made on the site 10 blogs at a time -->
 
+<div id="blogContain">
 <% if params[:search] %>
 
 <%= render 'blogs/search' %>
 
 <% else %>
 
-	<!-- counts all of the tagggings, and prints out the top ten most used tags.
-	If less than ten tags exist, all tags are printed -->
-	<% t = Tagging.count(:group => :tag_id).sort{|a,b| -1*(a[1]<=>b[1])} %>
-	<% if Tag.count < 10 %>
-		<% for i in 0..(Tag.count-1) %>
-			<%= link_to Tag.find_by_id(t[i][0]).title, 
-				life_tag_path(Tag.find_by_id(t[i][0]).blogs.first,Tag.find_by_id(t[i][0])) %>	
-		<% end %>
-	<% else %>
-		<% for i in 0..10 %>
-			<%= link_to Tag.find_by_id(t[i][0]).title, 
-				life_tag_path(Tag.find_by_id(t[i][0]).blogs.first,Tag.find_by_id(t[i][0])) %>	
-		<% end %>
-	<% end %>
+
 
 	<!-- the conditional exists so that the site will render immediately 
 	upon deployment -->	
@@ -36,3 +24,24 @@
 	<% end %>	
 
 <% end %>
+</div>
+
+<div id="rightContain">
+<div class="rightBar">
+	<h1>Recent Tags</h1>
+	<!-- counts all of the tagggings, and prints out the top ten most used tags.
+	If less than ten tags exist, all tags are printed -->
+	<% t = Tagging.count(:group => :tag_id).sort{|a,b| -1*(a[1]<=>b[1])} %>
+	<% if Tag.count < 10 %>
+		<ul><% for i in 0..(Tag.count-1) %>
+			<li><%= link_to Tag.find_by_id(t[i][0]).title, 
+				life_tag_path(Tag.find_by_id(t[i][0]).blogs.first,Tag.find_by_id(t[i][0])) %></li>
+		<% end %></ul>	
+	<% else %>
+		<% for i in 0..10 %>
+			<%= link_to Tag.find_by_id(t[i][0]).title, 
+				life_tag_path(Tag.find_by_id(t[i][0]).blogs.first,Tag.find_by_id(t[i][0])) %>	
+		<% end %>
+	<% end %>
+</div>
+</div>	

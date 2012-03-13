@@ -21,8 +21,9 @@
 			      <h3> Add a tag      
 				      <% form_tag(life_taggings_path(blog)) do %>     
 					      <%= text_field_tag 'title' %>     
-					      <%= submit_tag 'submit' %>     
-			     </h3><% end %>	
+					      <%= submit_tag 'submit' %> 
+					      </h3>    
+			     <% end %>	
 		      </ul>
 	      </div> <!-- end edit post !-->
       <% end %>
@@ -37,7 +38,8 @@
 		      <%= link_to tagging.title, life_tag_path(blog,tagging.tag) %>,
 	      <% end %>
       <% end %>
-		</div>
+      </h3>
+	</div>
 
 		<!-- AddThis Button BEGIN -->
 		<div class="addthis_toolbox addthis_default_style "

@@ -22,14 +22,26 @@
 
   </head>
   <body>
-    <div id="container">		
-      <%= render 'layouts/header' %>
+  <div id="shareBox">
+  <a href="http://www.linkedin.com/in/tammyportnoy/" style="text-decoration:none;">
+	<span style="font: 80% Arial,sans-serif; color:#0783B6;">
+		<img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png" 
+		width="40" height="30" alt="View Tammy Portnoy's LinkedIn profile" 
+		style="vertical-align:middle" border="0"></span></a>
 
-      <%flash.each do |key, value| %>
+<a href="/rss"><img src="/images/feed-icon-28x28.png" height="30" width="30" style="vertical-align:middle"></a>
+  </div>
+    <div id="outterHead">		
+      <header><%= render 'layouts/header' %></header>
+	</div>
+	<div id="container">
+		<div id="innerContain">
+      	<%flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-
-    <%= yield %>
+      	<% end %>
+	
+   		 <%= yield %>
+    	</div>
     </div>
   </body>
 </html>

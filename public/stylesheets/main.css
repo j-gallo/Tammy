@@ -1,5 +1,7 @@
 body{
-background: #e6e6e6 url("../images/background.jpg") top left repeat-x;
+background: #6c6c6c url("../images/bodyBackground.png") top left repeat-x;
+padding: 0px;
+margin: 0px;
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
@@ -44,9 +46,17 @@ ul{
 margin: 0px;
 padding: 0px;
 }
-#container{
-margin: 0px auto;
+
+#innerContain{
+background: #e6e6e6 url("../images/contentBackground.png") top left repeat-x;
+padding: 0px 13px 0px 14px;
+margin: 0px 12px 0px 11px;
 width: 960px;
+}
+#container{
+padding: 0px;
+margin: 0px auto;
+width: 1010px;
 }
 
 body a:link{
@@ -81,6 +91,20 @@ clear: both;
  Header 
 ==================================
 */
+#outterHead{
+background: url("../images/background.png") bottom left no-repeat;
+padding: 0px;
+margin: 0px auto;
+width: 1010px;
+height: 80px;
+}
+
+header{
+padding: 0px;
+margin: 0px 25px;
+width: 960px;
+}
+
 
 #textHeader h1{
 display: none;
@@ -150,13 +174,36 @@ color: #e6e6e6;
 }
 /*
 ==================================
+Floating Share
+==================================
+*/
+#shareBox{
+border-top: 10px solid #a5c77f;
+background: #e6e6e6;
+width: 40px;
+height: 120px;
+position: fixed;
+top: 125px;
+
+-moz-box-shadow:    1px 0px 2px 2px #555;
+-webkit-box-shadow: 1px 0px 2px 2px #555;
+box-shadow:         1px 0px 2px 2px #555;
+}
+
+#shareBox img{
+padding: 5px 0 0 5px;
+}
+
+/*
+==================================
 Content 
 ==================================
 */
 
 #content{
 float: left;
-width: 666px;
+width: 661px;
+margin-left: 5px;
 }
 
 #content h1{
@@ -221,7 +268,7 @@ display: inline;
 
 #rightContain{
 float: left;
-width: 262px;
+width: 290px;
 margin: 0;
 padding: 0;
 }
@@ -231,7 +278,7 @@ padding: 0;
 background: url("../images/bennyBowTie.png") top left no-repeat;
 width: 262px;
 height: 97px;
-margin: 0 0 0 25px;
+margin: 0 0 0 20px;
 padding: 0 0 0 0;
 }
 
@@ -248,7 +295,7 @@ padding: 0;
 }
 
 #expand{
-margin: 0 0 0 25px;
+margin: 0 0 0 20px;
 
 padding: 0;
 width: 262px;
@@ -268,7 +315,7 @@ color: #42826c;
 #bottom{
 
 padding: 0;
-margin: 0 0 25px 25px;
+margin: 0 0 25px 20px;
 width: 262px;
 height: 6px;
 background: url("../images/bottom.png") top left no-repeat;
@@ -276,7 +323,7 @@ background: url("../images/bottom.png") top left no-repeat;
 
 .rightBar{
 background-color: #f2f2f2;
-margin-left: 25px;
+margin-left: 20px;
 margin-bottom: 25px;
 padding: 6px;
 

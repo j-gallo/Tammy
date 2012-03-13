@@ -36,21 +36,22 @@ ActiveRecord::Schema.define(:version => 20120214164426) do
   end
 
   create_table "photos", :force => true do |t|
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "photo_content_type"
+    t.string   "photo_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "portfolios", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "url"
     t.integer  "year"
   end

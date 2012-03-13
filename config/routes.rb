@@ -11,10 +11,14 @@ Tammy::Application.routes.draw do
 	  resources :tags, :taggings
   end
 
+	match 'rss', :to => 'blogs#rss'
+
   root :to => 'pages#home'
   match '/admin/blog', :to => 'admins#blog'
   match '/signout', :to => 'sessions#destroy'
 	match '/browser/upload/type/image', :to => 'photos#create'
+	#ex:map.connect 'sitemap.xml', :controller => "sitemap", :action => "sitemap"
+	match '/sitemap.xml', :to =>'sitemap#sitemap'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

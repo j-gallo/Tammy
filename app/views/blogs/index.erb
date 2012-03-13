@@ -28,7 +28,7 @@
 
 <div id="rightContain">
 <div class="rightBar">
-	<h1>Recent Tags</h1>
+	<h1>Popular Tags</h1>
 	<!-- counts all of the tagggings, and prints out the top ten most used tags.
 	If less than ten tags exist, all tags are printed -->
 	<% t = Tagging.count(:group => :tag_id).sort{|a,b| -1*(a[1]<=>b[1])} %>

@@ -1,0 +1,12 @@
+xml.instruct!
+xml.urlset "xmlns" => "hhtp:/www.sitemaps.org/schemas/sitemap/0.9" do
+	@entries.each do |entry|
+		xml.url do
+			xml.loc url_for(:controller => 'blogs',
+											:action => 'show',
+											:id => entry.id,
+											:only_path => false)
+			xml.lastmod entry.updated_at.to_date
+		end
+	end
+end

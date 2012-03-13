@@ -1,0 +1,20 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.ord/dc/elements/1.1/" do
+	xml.channel do
+
+		xml.title				"tammyportnoy.com Blog"
+		xml.link				url_for :only_path => false, :controller => 'blogs'
+		xml.description	"tammyportnoy.com Blog"
+
+		@blog.each do |blog|
+			xml.item do
+				xml.title 			blog.title
+				xml.link				url_for :only_path => false, :controller => 'blogs', :action => 'show', :id => blog.id
+				xml.pubDate			blog.created_at.to_s(:rfc822)
+				xml.description	truncate(blog.content, :length => 500, :separator => ' ')
+				xml.guid				url_for :only_path => false, :controller => 'blogs', :action => 'show', :id => blog.id
+			end
+		end
+	end
+end

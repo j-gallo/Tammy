@@ -17,9 +17,13 @@ class BlogsController < ApplicationController
 		 @blog = Blog.search(params[:search],params[:page])
 	  else
 	 	 @blog = Blog.paginate(:page => params[:page], :per_page => 10)
-	  end
-		  
+	  end		  
   end
+
+	def rss
+		@blog = Blog.find(:all, :order => "id DESC", :limit => 10)
+		render :layout => false
+	end
 
   def edit
 	@title = "Edit blog"

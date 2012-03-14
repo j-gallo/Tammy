@@ -3,20 +3,19 @@ The image is a link and is displayed originally as a thumbnail. If a url was
 supplied, the code appends the http:// to the beginning if need be to create 
 a proper link. If no url was provided, the image is a link to the full-sized 
 image instead. -->
-
 <div class="workAdminContain">
 <div class="workImgContain">
 <% if portfolio.url == "" %>
-	<a href="<%= portfolio.photo.url %>">
+	<a rel="lightbox" href="<%= portfolio.photo.url %>">
 		<%= image_tag portfolio.photo.url(:thumb) %>
 	</a>
 <% else %>
 	<% if portfolio.url.include? "http://"%>
-	<a href="<%= portfolio.url %>">
+	<a rel="lightbox" href="<%= portfolio.url %>">
 		<%= image_tag portfolio.photo.url(:thumb) %>
 	</a>
 	<% else %>
-	<a href="http://<%= portfolio.url %>">
+	<a rel="lightbox"  href="http://<%= portfolio.url %>">
 		<%= image_tag portfolio.photo.url(:thumb) %>
 	</a>
 	<% end %>

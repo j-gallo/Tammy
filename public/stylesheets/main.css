@@ -302,7 +302,7 @@ width: 262px;
 background: url("../images/expand.png") top left repeat-y;
 }
 #expand img{
-padding:6px;
+padding:6px 16px 6px 16px;
 }
 #expand h1{
 font-size: 18px;

@@ -49,8 +49,8 @@ padding: 0px;
 
 #innerContain{
 background: #e6e6e6 url("../images/contentBackground.png") top left repeat-x;
-padding: 0px 13px 0px 14px;
-margin: 0px 12px 0px 11px;
+padding: 15px 13px 15px 14px;
+margin: 0px 12px 15px 11px;
 width: 960px;
 }
 #container{
@@ -118,6 +118,17 @@ height: 48px;
 background: url("../images/disjointedText.png") top left no-repeat;
 }
 
+#blogHeader h1{
+display: none;
+}
+#blogHeader{
+margin-top: 15px;
+margin-bottom: 25px;
+color: #002f32;
+width: 660px;
+height: 48px;
+background: url("../images/blogPosts.png") top left no-repeat;
+}
 
 /*
 ==================================

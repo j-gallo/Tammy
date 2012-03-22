@@ -1,12 +1,10 @@
 class AboutController < ApplicationController
 
 	def index
-		@title = 'About'
 		@about = About.first
 	end
 
 	def edit
-		@title = 'edit'
 		@about = About.first
 	end
 

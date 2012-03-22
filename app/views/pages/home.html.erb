@@ -67,16 +67,16 @@
 </div>
 
 <div id="rightContain">
-<div id="bennyBowTieImage">
-</div>
-<div id="expand">
-	<h1><a href="http://mydadwearsbowtieseveryday.tumblr.com">Benny's Bow Ties</a></h1>
-	<img width="230px" src="<%= @bow_ties["response"]["posts"][0]["photos"][0]["alt_sizes"][2]["url"] %>" /img>	
-</div>
-<div id="bottom"></div>
-<!-- this renders the twitter feed and the link to tammy's tumblr -->
-<div class="rightBar">	
-	<%= render 'twitter/twitter' %> 
-</div>
+	<!-- this renders the twitter feed and the link to tammy's tumblr -->
+	<div class="rightBar">	
+		<%= render 'twitter/twitter' %> 
+	</div>
+	<div id="bennyBowTieImage">
+	</div>
+	<div id="expand">
+		<h1><a href="http://mydadwearsbowtieseveryday.tumblr.com">Benny's Bow Ties: <br/> A Tumblr blog</a></h1>
+		<img width="230px" src="<%= @bow_ties["response"]["posts"][0]["photos"][0]["alt_sizes"][2]["url"] %>" /img>	
+	</div>
+	<div id="bottom"></div>
 </div>
 <div class="clearBoth"></div>

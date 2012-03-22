@@ -11,11 +11,11 @@ image instead. -->
 	</a>
 <% else %>
 	<% if portfolio.url.include? "http://"%>
-	<a rel="lightbox" href="<%= portfolio.url %>">
+	<a href="<%= portfolio.url %>">
 		<%= image_tag portfolio.photo.url(:thumb) %>
 	</a>
 	<% else %>
-	<a rel="lightbox"  href="http://<%= portfolio.url %>">
+	<a href="http://<%= portfolio.url %>">
 		<%= image_tag portfolio.photo.url(:thumb) %>
 	</a>
 	<% end %>

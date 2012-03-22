@@ -26,7 +26,6 @@ class BlogsController < ApplicationController
 	end
 
   def edit
-	@title = "Edit blog"
 	@blog = Blog.find(params[:id])
   end
 
@@ -36,7 +35,6 @@ class BlogsController < ApplicationController
 		  flash[:success] = "Blog Updated."
 		  redirect_to life_index_path
 	  else
-		  @title = "Edit Blog"
 		  render 'forms/_blog_edit'
 	  end
   end

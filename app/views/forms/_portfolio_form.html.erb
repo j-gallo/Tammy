@@ -3,7 +3,7 @@
 <% form_for @new_portfolio, :html => { :multipart => true } do |f| %>
 	<%= render 'shared/error_messages', :object => @new_portfolio %>
 	<%= f.file_field :photo %><br/>
-	<%= f.text_field :url%>
+	<%= f.text_field :url, :placeholder => "Add a url if you want"%>
 	<%= f.select :year, (1990..2050).to_a.map, :selected => Date.today.year %><br />
 	<%= f.submit "Submit" %>
 <% end %>

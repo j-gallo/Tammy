@@ -4,7 +4,6 @@ class PagesController < ApplicationController
 	require "uri"
 
   def home
-    @title = "Home"
     @key = "lwtSLQJtXyqyVPZ55pcTAOYmK99Rt6lUmJyr42nz5CZqRrbVYU"
     @host = "mydadwearsbowtieseveryday.tumblr.com"
     uri = URI.parse("http://api.tumblr.com/v2/blog/#{@host}/posts?api_key=#{@key}&limit=1")

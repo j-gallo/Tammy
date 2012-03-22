@@ -1,7 +1,6 @@
 class TaggingsController < ApplicationController
 
   def index
-	  @title = "Delete Tags"
 	  @tagging  = Blog.find(params[:life_id]).taggings
   end 
 

@@ -1,7 +1,6 @@
 class PortfoliosController < ApplicationController
 
   def index
-    @title = "Disjointed Body of Work"
     @new_portfolio = Portfolio.new
     params[:format] ||= Date.today.year
     @year = params[:format].to_i 

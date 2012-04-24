@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'pg'
 gem 'grackle'
 gem 'rails'
 gem 'will_paginate'

@@ -1,7 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'activerecord-postgresql-adapter'
-
 gem 'grackle'
 gem 'rails'
 gem 'will_paginate'

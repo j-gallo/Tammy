@@ -19,11 +19,11 @@
 			      <li> <%= link_to "delete tags", life_taggings_path(blog) %></li>
 			      <br />     
 			      <h3> Add a tag      
-				      <% form_tag(life_taggings_path(blog)) do %>     
+				      <%= form_tag(life_taggings_path(blog)) do %>     
 					      <%= text_field_tag 'title' %>     
 					      <%= submit_tag 'submit' %> 
-					      </h3>    
-			     <% end %>	
+			        <% end %>	
+					  </h3>    
 		      </ul>
 	      </div> <!-- end edit post !-->
       <% end %>

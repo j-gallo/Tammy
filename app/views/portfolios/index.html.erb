@@ -8,7 +8,8 @@ her portfolio -->
 </div>
 <% end %>
 
-<% ports = Portfolio.count(:group => :year).to_a.sort{|a,b| -1*(a[0]<=>b[0])} %>
+<% unless Portfolio.first == nil %>
+<% ports = Portfolio.count(:group => "portfolios.created_at, year").to_a.sort{|a,b| -1*(a[0]<=>b[0])} %>
 
 <% for i in 0..(ports.count-1) %>
 	<% if ports[i][0] == @year %>
@@ -16,6 +17,7 @@ her portfolio -->
 	<% else %>
 		<%= link_to ports[i][0], portfolios_path(ports[i][0]) %>
 	<% end %>
+<% end %>
 <% end %>
 
 <!-- This grabs the year from the url, grabs all portfolio objects with that year,

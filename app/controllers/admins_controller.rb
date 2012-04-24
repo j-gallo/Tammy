@@ -7,6 +7,7 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.create(params[:admin])
     @admin.save
+	  redirect_to admin_index_path
   end
 
   def edit
